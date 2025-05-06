@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Traducción - Hermenéutica y Teorías Contemporáneas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .question h3 {
+            margin-top: 0;
+            color: #3498db;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+        .option input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .option label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .option span {
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .results {
+            display: none;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .results h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 0;
+        }
+        .result-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .correct {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .partially-correct {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+        .checkbox-question .option {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Traducción - Hermenéutica y Teorías Contemporáneas</h1>
+    
+    <form id="quizForm">
+        <!-- Pregunta 1 -->
+        <div class="question" id="q1">
+            <h3>Pregunta 1</h3>
+            <p>La traducción es, en opinión de Ortega:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q1" value="a">
+                        <span>a.</span> Posible y necesaria.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q1" value="b">
+                        <span>b.</span> Posible, pero innecesaria.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q1" value="c">
+                        <span>c.</span> Imposible, pero necesaria.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 2 -->
+        <div class="question" id="q2">
+            <h3>Pregunta 2</h3>
+            <p>Cuando Ortega señala que "Wald" ("forest") no equivale a "bosque" hace referencia al:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q2" value="a">
+                        <span>a.</span> Anisomorfismo pragmático.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q2" value="b">
+                        <span>b.</span> Anisomorfismo interpretativo.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q2" value="c">
+                        <span>c.</span> Anisomorfismo lingüístico.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 3 -->
+        <div class="question" id="q3">
+            <h3>Pregunta 3</h3>
+            <p>El concepto <em>Ursprache</em> o lengua primigenia se relaciona con la idea de(l):</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q3" value="a">
+                        <span>a.</span> Que las lenguas son diferentes entre sí.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q3" value="b">
+                        <span>b.</span> Parentesco de las lenguas.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q3" value="c">
+                        <span>c.</span> Traductor traidor.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 4 -->
+        <div class="question" id="q4">
+            <h3>Pregunta 4</h3>
+            <p>Ibn Jattar Al-Bustani emplea como unidad de traducción:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q4" value="a">
+                        <span>a.</span> La palabra.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q4" value="b">
+                        <span>b.</span> La frase.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q4" value="c">
+                        <span>c.</span> El párrafo.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 5 -->
+        <div class="question" id="q5">
+            <h3>Pregunta 5</h3>
+            <p>El inventor del sistema de transcripción gráfica del chino con caracteres latinos fue:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q5" value="a">
+                        <span>a.</span> Yen Fu.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q5" value="b">
+                        <span>b.</span> Mao Dun.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q5" value="c">
+                        <span>c.</span> Lin Yutang.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 6 -->
+        <div class="question" id="q6">
+            <h3>Pregunta 6</h3>
+            <p>Ibn Jattar Al-Bustani adquirió fama con su traducción de:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q6" value="a">
+                        <span>a.</span> La Eneida.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q6" value="b">
+                        <span>b.</span> La Odisea.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q6" value="c">
+                        <span>c.</span> La Iliada.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 7 (Checkbox) -->
+        <div class="question checkbox-question" id="q7">
+            <h3>Pregunta 7</h3>
+            <p>La hermenéutica muestra planteamientos cercanos a(l):</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="q7" value="a">
+                        <span>a.</span> Schleiermacher.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="q7" value="b">
+                        <span>b.</span> Las bellas infieles.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="q7" value="c">
+                        <span>c.</span> Romanticismo.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 8 -->
+        <div class="question" id="q8">
+            <h3>Pregunta 8</h3>
+            <p>La ampliación del horizonte de la que habla la hermenéutica se consigue:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q8" value="a">
+                        <span>a.</span> Mediante la supresión de los rasgos culturales distintivos.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q8" value="b">
+                        <span>b.</span> Mediante la neutralización de los rasgos culturales distintivos.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q8" value="c">
+                        <span>c.</span> Mediante la incorporación de los rasgos culturales distintivos.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 9 -->
+        <div class="question" id="q9">
+            <h3>Pregunta 9</h3>
+            <p>La hermenéutica es una teoría:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q9" value="a">
+                        <span>a.</span> Aplicada a la fusión de textos.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q9" value="b">
+                        <span>b.</span> Aplicada a la interpretación de textos.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q9" value="c">
+                        <span>c.</span> Aplicada a la creación de textos.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 10 -->
+        <div class="question" id="q10">
+            <h3>Pregunta 10</h3>
+            <p>Borges se muestra contrario a la:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q10" value="a">
+                        <span>a.</span> Traducción literal.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q10" value="b">
+                        <span>b.</span> Traducción aceptable.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q10" value="c">
+                        <span>c.</span> Traducción libre.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <button type="button" id="checkAnswers">Corregir Test</button>
+    </form>
+    
+    <div class="results" id="results">
+        <h2>Resultados del Test</h2>
+        <div class="score" id="score"></div>
+        <div id="resultsDetails"></div>
+    </div>
+    
+    <script>
+        // Respuestas correctas
+        const correctAnswers = {
+            q1: "c",
+            q2: "c",
+            q3: "b",
+            q4: "b",
+            q5: "c",
+            q6: "c",
+            q7: ["a", "c"], // Opciones a y c son correctas para pregunta 7
+            q8: "c",
+            q9: "b",
+            q10: "a"
+        };
+        
+        // Puntos por pregunta (para preguntas con múltiples respuestas)
+        const questionPoints = {
+            q7: { total: 1, correct: ["a", "c"], partial: 0.5 } // 1 punto por ambas, 0.5 por una correcta
+        };
+        
+        // Explicaciones de las respuestas
+        const explanations = {
+            q1: "Ortega y Gasset consideraba que la traducción es imposible (por las diferencias entre lenguas) pero necesaria (porque necesitamos comunicarnos entre culturas).",
+            q2: "El ejemplo de 'Wald' muestra el anisomorfismo lingüístico, donde palabras aparentemente equivalentes en diferentes lenguas no cubren exactamente los mismos significados.",
+            q3: "El concepto de <em>Ursprache</em> (lengua primigenia) está relacionado con la idea del parentesco entre las lenguas, teoría desarrollada por los lingüistas románticos.",
+            q4: "Ibn Jattar Al-Bustani utilizaba la frase como unidad de traducción, considerando que era el nivel adecuado para captar el sentido completo.",
+            q5: "Lin Yutang fue el creador del sistema de transcripción del chino a caracteres latinos, contribuyendo significativamente a la difusión de la cultura china.",
+            q6: "Ibn Jattar Al-Bustani se hizo famoso por su traducción de la Ilíada al árabe, considerada una obra maestra de la traducción medieval.",
+            q7: "La hermenéutica tiene planteamientos cercanos a Schleiermacher (quien influyó en su desarrollo) y al Romanticismo (que enfatizaba la comprensión del espíritu del texto).",
+            q8: "La hermenéutica propone ampliar el horizonte de comprensión incorporando (no suprimiendo) los rasgos culturales distintivos del texto original.",
+            q9: "La hermenéutica es una teoría aplicada a la interpretación de textos, buscando comprender su significado en su contexto original.",
+            q10: "Borges criticaba la traducción literal, defendiendo en cambio traducciones más creativas que captaran el espíritu del original."
+        };
+        
+        // Función para comparar arrays
+        function arraysEqual(a, b) {
+            if (a === b) return true;
+            if (a == null || b == null) return false;
+            if (a.length !== b.length) return false;
+            
+            for (let i = 0; i < a.length; ++i) {
+                if (a[i] !== b[i]) return false;
+            }
+            return true;
+        }
+        
+        // Función para calcular puntuación de preguntas con múltiples respuestas
+        function calculateMultiAnswerScore(questionId, selectedOptions) {
+            if (!questionPoints[questionId]) return 0;
+            
+            const { total, correct, partial } = questionPoints[questionId];
+            const correctSelected = selectedOptions.filter(opt => correct.includes(opt)).length;
+            const incorrectSelected = selectedOptions.filter(opt => !correct.includes(opt)).length;
+            
+            if (incorrectSelected > 0) return 0; // Si hay respuestas incorrectas seleccionadas, 0 puntos
+            if (arraysEqual(selectedOptions.sort(), correct.sort())) return total; // Todas correctas
+            if (partial && correctSelected > 0) return partial; // Respuesta parcialmente correcta
+            return 0;
+        }
+        
+        document.getElementById('checkAnswers').addEventListener('click', function() {
+            let score = 0;
+            let resultsHTML = '';
+            let totalQuestions = 10;
+            
+            // Evitar que el formulario se envíe
+            event.preventDefault();
+            
+            // Procesar cada pregunta
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionId = 'q' + i;
+                const questionDiv = document.getElementById(questionId);
+                const questionText = questionDiv.querySelector('p').textContent;
+                let isCorrect = false;
+                let isPartial = false;
+                let pointsEarned = 0;
+                
+                // Manejar pregunta 7 (checkbox)
+                if (questionId === 'q7') {
+                    const selectedOptions = Array.from(document.querySelectorAll(`input[name="${questionId}"]:checked`)).map(el => el.value);
+                    pointsEarned = calculateMultiAnswerScore(questionId, selectedOptions);
+                    
+                    if (pointsEarned === questionPoints[questionId].total) {
+                        isCorrect = true;
+                    } else if (pointsEarned > 0) {
+                        isPartial = true;
+                    }
+                    
+                    score += pointsEarned;
+                    
+                    // Obtener texto de las opciones seleccionadas
+                    let selectedTexts = [];
+                    selectedOptions.forEach(opt => {
+                        const optionElement = document.querySelector(`input[name="${questionId}"][value="${opt}"]`);
+                        const optionText = optionElement.parentElement.querySelector('span').nextSibling.textContent.trim();
+                        selectedTexts.push(`${opt}. ${optionText}`);
+                    });
+                    
+                    // Obtener texto de las opciones correctas
+                    let correctTexts = [];
+                    correctAnswers[questionId].forEach(opt => {
+                        const optionElement = document.querySelector(`input[name="${questionId}"][value="${opt}"]`);
+                        const optionText = optionElement.parentElement.querySelector('span').nextSibling.textContent.trim();
+                        correctTexts.push(`${opt}. ${optionText}`);
+                    });
+                    
+                    // Determinar clase CSS según el resultado
+                    let resultClass = '';
+                    if (isCorrect) {
+                        resultClass = 'correct';
+                    } else if (isPartial) {
+                        resultClass = 'partially-correct';
+                    } else {
+                        resultClass = 'incorrect';
+                    }
+                    
+                    resultsHTML += `
+                        <div class="result-item ${resultClass}">
+                            <p><strong>Pregunta ${i}:</strong> ${questionText}</p>
+                            <p><strong>Tu respuesta:</strong> ${selectedTexts.length > 0 ? selectedTexts.join(', ') : 'No respondiste'}</p>
+                            ${!isCorrect ? `<p><strong>Respuesta correcta:</strong> ${correctTexts.join(', ')}</p>` : ''}
+                            <p><strong>Explicación:</strong> ${explanations[questionId]}</p>
+                            <p><strong>Puntuación:</strong> ${pointsEarned.toFixed(1)}/1.0</p>
+                        </div>
+                    `;
+                } else {
+                    // Manejar preguntas de radio (una sola respuesta)
+                    const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                    const userAnswer = selectedOption ? selectedOption.value : null;
+                    isCorrect = userAnswer === correctAnswers[questionId];
+                    
+                    if (isCorrect) {
+                        pointsEarned = 1;
+                        score += 1;
+                    }
+                    
+                    // Obtener el texto de la opción seleccionada
+                    const selectedOptionText = selectedOption ? 
+                        selectedOption.parentElement.querySelector('span').nextSibling.textContent.trim() : 
+                        'No respondiste';
+                    
+                    // Obtener el texto de la opción correcta
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    const correctOptionText = correctOption.parentElement.querySelector('span').nextSibling.textContent.trim();
+                    
+                    resultsHTML += `
+                        <div class="result-item ${isCorrect ? 'correct' : 'incorrect'}">
+                            <p><strong>Pregunta ${i}:</strong> ${questionText}</p>
+                            <p><strong>Tu respuesta:</strong> ${selectedOptionText}</p>
+                            ${!isCorrect ? `<p><strong>Respuesta correcta:</strong> ${correctOptionText}</p>` : ''}
+                            <p><strong>Explicación:</strong> ${explanations[questionId]}</p>
+                            <p><strong>Puntuación:</strong> ${pointsEarned.toFixed(1)}/1.0</p>
+                        </div>
+                    `;
+                }
+            }
+            
+            // Mostrar puntuación total
+            document.getElementById('score').textContent = `Puntuación total: ${score.toFixed(1)}/${totalQuestions}`;
+            document.getElementById('resultsDetails').innerHTML = resultsHTML;
+            document.getElementById('results').style.display = 'block';
+            
+            // Desplazarse a los resultados
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

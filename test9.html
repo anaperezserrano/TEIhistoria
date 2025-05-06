@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Traducción - Renacimiento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .question h3 {
+            margin-top: 0;
+            color: #3498db;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+        .option input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .option label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .option span {
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .results {
+            display: none;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .results h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 0;
+        }
+        .result-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .correct {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+        .checkbox-question .option {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Traducción - Renacimiento</h1>
+    
+    <form id="quizForm">
+        <!-- Pregunta 1 (Checkbox) -->
+        <div class="question checkbox-question" id="q1">
+            <h3>Pregunta 1</h3>
+            <p>Según Juan Luis Vives, el texto meta:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="q1" value="a">
+                        <span>a.</span> Debe ser fiel al original.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="q1" value="b">
+                        <span>b.</span> Debe ser exotizado.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="q1" value="c">
+                        <span>c.</span> No debe ser exotizado.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 2 -->
+        <div class="question" id="q2">
+            <h3>Pregunta 2</h3>
+            <p>Cuando Du Bellay habla de perdonar a los traductores los "pecados" cometidos en las traducciones para príncipes y mecenas, se está refiriendo a:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q2" value="a">
+                        <span>a.</span> La lealtad con la obra original.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q2" value="b">
+                        <span>b.</span> La lealtad hacía sí mismo (del traductor).
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q2" value="c">
+                        <span>c.</span> La lealtad con el receptor.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q2" value="d">
+                        <span>d.</span> La lealtad con el encargo.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 3 -->
+        <div class="question" id="q3">
+            <h3>Pregunta 3</h3>
+            <p>Durante el periodo del Renacimiento la reflexión traductológica se centra en el modo de traducir:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q3" value="a">
+                        <span>a.</span> Los textos literarios.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q3" value="b">
+                        <span>b.</span> Los textos científicos.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q3" value="c">
+                        <span>c.</span> La Biblia.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 4 -->
+        <div class="question" id="q4">
+            <h3>Pregunta 4</h3>
+            <p>En el Renacimiento se va imponiendo la traducción:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q4" value="a">
+                        <span>a.</span> Horizontal.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q4" value="b">
+                        <span>b.</span> Vertical.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q4" value="c">
+                        <span>c.</span> Angular.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 5 -->
+        <div class="question" id="q5">
+            <h3>Pregunta 5</h3>
+            <p>El fortalecimiento de las lenguas vernáculas supone:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q5" value="a">
+                        <span>a.</span> La afirmación de los estados nación.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q5" value="b">
+                        <span>b.</span> La afirmación de los estados federados.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q5" value="c">
+                        <span>c.</span> La afirmación de los estados federales.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 6 -->
+        <div class="question" id="q6">
+            <h3>Pregunta 6</h3>
+            <p>Du Bellay y Dolet optan por la traducción:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q6" value="a">
+                        <span>a.</span> Palabra por palabra.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q6" value="b">
+                        <span>b.</span> Documental.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q6" value="c">
+                        <span>c.</span> Libre.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q6" value="d">
+                        <span>d.</span> Literal.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 7 -->
+        <div class="question" id="q7">
+            <h3>Pregunta 7</h3>
+            <p>Por parte de la Iglesia católica, la única versión válida de la Biblia en época de Lutero es:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q7" value="a">
+                        <span>a.</span> La Septuaginta.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q7" value="b">
+                        <span>b.</span> La Biblia alfonsina.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q7" value="c">
+                        <span>c.</span> La Vulgata.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 8 -->
+        <div class="question" id="q8">
+            <h3>Pregunta 8</h3>
+            <p>A Tyndale se le acusa de negar el sacramento del/de la:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q8" value="a">
+                        <span>a.</span> Bautismo.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q8" value="b">
+                        <span>b.</span> Eucaristía.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q8" value="c">
+                        <span>c.</span> Matrimonio.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q8" value="d">
+                        <span>d.</span> Sacerdocio.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 9 -->
+        <div class="question" id="q9">
+            <h3>Pregunta 9</h3>
+            <p>¿Qué tipo de equivalencia se prioriza en el Renacimiento? La que resulta de la traducción:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q9" value="a">
+                        <span>a.</span> Libre.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q9" value="b">
+                        <span>b.</span> Comunicativa.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q9" value="c">
+                        <span>c.</span> Dinámica.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q9" value="d">
+                        <span>d.</span> Aceptable.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q9" value="e">
+                        <span>e.</span> Literal.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pregunta 10 -->
+        <div class="question" id="q10">
+            <h3>Pregunta 10</h3>
+            <p>En la Edad Media predomina la traducción:</p>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q10" value="a">
+                        <span>a.</span> Angular.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q10" value="b">
+                        <span>b.</span> Vertical.
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="q10" value="c">
+                        <span>c.</span> Horizontal.
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <button type="button" id="checkAnswers">Corregir Test</button>
+    </form>
+    
+    <div class="results" id="results">
+        <h2>Resultados del Test</h2>
+        <div class="score" id="score"></div>
+        <div id="resultsDetails"></div>
+    </div>
+    
+    <script>
+        // Respuestas correctas
+        const correctAnswers = {
+            q1: ["a", "c"], // Pregunta de checkbox con múltiples respuestas correctas
+            q2: "d",
+            q3: "c",
+            q4: "a",
+            q5: "a",
+            q6: "c",
+            q7: "c",
+            q8: "d",
+            q9: "e",
+            q10: "b"
+        };
+        
+        // Explicaciones de las respuestas
+        const explanations = {
+            q1: "Según Juan Luis Vives, el texto meta debe ser fiel al original y no debe ser exotizado.",
+            q2: "Du Bellay se refiere a la lealtad con el encargo cuando habla de perdonar los 'pecados' en traducciones para príncipes y mecenas.",
+            q3: "Durante el Renacimiento, la reflexión traductológica se centraba principalmente en el modo de traducir la Biblia.",
+            q4: "En el Renacimiento se impone la traducción horizontal, entre lenguas vernáculas de similar prestigio.",
+            q5: "El fortalecimiento de las lenguas vernáculas supone la afirmación de los estados nación.",
+            q6: "Du Bellay y Dolet optaban por la traducción libre, defendiendo la adaptación al receptor.",
+            q7: "La Iglesia católica consideraba como única versión válida de la Biblia la Vulgata de San Jerónimo.",
+            q8: "A Tyndale se le acusó de negar el sacramento del sacerdocio en su traducción de la Biblia.",
+            q9: "En el Renacimiento se priorizaba la equivalencia literal en la traducción.",
+            q10: "En la Edad Media predominaba la traducción vertical, del latín a las lenguas vernáculas."
+        };
+        
+        document.getElementById('checkAnswers').addEventListener('click', function() {
+            let score = 0;
+            let resultsHTML = '';
+            
+            // Evitar que el formulario se envíe
+            event.preventDefault();
+            
+            // Procesar pregunta 1 (checkbox)
+            const q1Selected = Array.from(document.querySelectorAll('input[name="q1"]:checked')).map(el => el.value);
+            const q1Correct = arraysEqual(q1Selected.sort(), correctAnswers.q1.sort());
+            
+            if (q1Correct) {
+                score++;
+            }
+            
+            // Obtener texto de las opciones seleccionadas para q1
+            let selectedTexts = [];
+            q1Selected.forEach(opt => {
+                const optionElement = document.querySelector(`input[name="q1"][value="${opt}"]`);
+                const optionText = optionElement.parentElement.querySelector('span').nextSibling.textContent.trim();
+                selectedTexts.push(`${opt}. ${optionText}`);
+            });
+            
+            // Obtener texto de las opciones correctas para q1
+            let correctTexts = [];
+            correctAnswers.q1.forEach(opt => {
+                const optionElement = document.querySelector(`input[name="q1"][value="${opt}"]`);
+                const optionText = optionElement.parentElement.querySelector('span').nextSibling.textContent.trim();
+                correctTexts.push(`${opt}. ${optionText}`);
+            });
+            
+            resultsHTML += `
+                <div class="result-item ${q1Correct ? 'correct' : 'incorrect'}">
+                    <p><strong>Pregunta 1:</strong> ${document.getElementById('q1').querySelector('p').textContent}</p>
+                    <p><strong>Tu respuesta:</strong> ${selectedTexts.length > 0 ? selectedTexts.join(', ') : 'No respondiste'}</p>
+                    ${!q1Correct ? `<p><strong>Respuesta correcta:</strong> ${correctTexts.join(', ')}</p>` : ''}
+                    <p><strong>Explicación:</strong> ${explanations.q1}</p>
+                </div>
+            `;
+            
+            // Procesar preguntas 2-10 (radio buttons)
+            for (let i = 2; i <= 10; i++) {
+                const questionId = 'q' + i;
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const questionDiv = document.getElementById(questionId);
+                
+                if (selectedOption) {
+                    const userAnswer = selectedOption.value;
+                    const isCorrect = userAnswer === correctAnswers[questionId];
+                    
+                    if (isCorrect) {
+                        score++;
+                    }
+                    
+                    // Obtener el texto de la opción seleccionada
+                    const selectedOptionText = selectedOption.parentElement.querySelector('span').nextSibling.textContent.trim();
+                    
+                    // Obtener el texto de la opción correcta
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    const correctOptionText = correctOption.parentElement.querySelector('span').nextSibling.textContent.trim();
+                    
+                    resultsHTML += `
+                        <div class="result-item ${isCorrect ? 'correct' : 'incorrect'}">
+                            <p><strong>Pregunta ${i}:</strong> ${questionDiv.querySelector('p').textContent}</p>
+                            <p><strong>Tu respuesta:</strong> ${selectedOptionText}</p>
+                            ${!isCorrect ? `<p><strong>Respuesta correcta:</strong> ${correctOptionText}</p>` : ''}
+                            <p><strong>Explicación:</strong> ${explanations[questionId]}</p>
+                        </div>
+                    `;
+                } else {
+                    // Obtener el texto de la opción correcta para preguntas no respondidas
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    const correctOptionText = correctOption.parentElement.querySelector('span').nextSibling.textContent.trim();
+                    
+                    resultsHTML += `
+                        <div class="result-item incorrect">
+                            <p><strong>Pregunta ${i}:</strong> ${questionDiv.querySelector('p').textContent}</p>
+                            <p><strong>No respondiste esta pregunta.</strong></p>
+                            <p><strong>Respuesta correcta:</strong> ${correctOptionText}</p>
+                            <p><strong>Explicación:</strong> ${explanations[questionId]}</p>
+                        </div>
+                    `;
+                }
+            }
+            
+            document.getElementById('score').textContent = `Puntuación: ${score}/10`;
+            document.getElementById('resultsDetails').innerHTML = resultsHTML;
+            document.getElementById('results').style.display = 'block';
+            
+            // Desplazarse a los resultados
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Función para comparar arrays
+        function arraysEqual(a, b) {
+            if (a === b) return true;
+            if (a == null || b == null) return false;
+            if (a.length !== b.length) return false;
+            
+            for (let i = 0; i < a.length; ++i) {
+                if (a[i] !== b[i]) return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
